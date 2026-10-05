@@ -23,7 +23,7 @@ export function Services() {
           initial="hidden"
           whileInView="show"
           viewport={revealViewport}
-          className="mt-12 grid gap-5 md:grid-cols-2"
+          className="mt-12 grid grid-cols-[minmax(0,1fr)] gap-5 md:grid-cols-2"
         >
           {services.map((s) => (
             <motion.div

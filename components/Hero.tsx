@@ -21,7 +21,7 @@ function ArrowIcon() {
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-14 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:pb-24">
+      <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-10 px-5 pb-16 pt-14 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:pb-24">
         <motion.div variants={staggerParent} initial="hidden" animate="show">
           <motion.div variants={staggerChild} className="flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-2 rounded-md border border-brand-line bg-brand-soft px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-deep shadow-xs">
@@ -35,7 +35,7 @@ export function Hero() {
 
           <motion.h1
             variants={staggerChild}
-            className="mt-7 text-[2.6rem] font-extrabold leading-[1.06] tracking-[-0.02em] md:text-6xl lg:text-[3.6rem]"
+            className="mt-7 text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-[2.6rem] sm:leading-[1.06] md:text-6xl lg:text-[3.6rem]"
           >
             I build production web apps that earn their keep.
           </motion.h1>

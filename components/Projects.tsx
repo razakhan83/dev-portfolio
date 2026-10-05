@@ -38,7 +38,7 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
       initial="hidden"
       whileInView="show"
       viewport={revealViewport}
-      className="grid items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14"
+      className="grid grid-cols-[minmax(0,1fr)] items-start gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14"
     >
       <div className={cn(flip && "lg:order-2")}>
         <ProjectShot
