@@ -157,9 +157,9 @@ export function Dashboard({ instant }: { instant: boolean }) {
 
   return (
     <div className="min-h-screen bg-[#0c0a09] font-sans text-stone-200">
-      <div className="border-b border-white/10 bg-amber-400/10 px-5 py-2.5 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-amber-200">
-          Concept demo — Pulseboard · <Link href="/" className="underline underline-offset-4 hover:text-amber-100">Back to portfolio</Link>
+      <div className="border-b border-white/10 bg-sky-400/10 px-5 py-2.5 text-center">
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-sky-200">
+          Concept demo — Pulseboard · <Link href="/" className="underline underline-offset-4 hover:text-sky-100">Back to portfolio</Link>
         </p>
       </div>
 

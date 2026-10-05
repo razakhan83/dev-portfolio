@@ -66,14 +66,14 @@ export function Contact() {
   };
 
   const inputCls =
-    "w-full rounded-md border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-faint transition-colors duration-150 focus:border-pine focus:outline-none";
+    "w-full rounded-md border border-line bg-paper px-4 py-3 text-[15px] text-ink placeholder:text-faint transition-colors duration-150 focus:border-brand focus:outline-none";
 
   return (
     <section id="contact" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">04 : Hire me</p>
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-deep">04 : Hire me</p>
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
               Have a project? Let&apos;s scope it.
             </h2>
@@ -98,14 +98,14 @@ export function Contact() {
                     rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="group flex items-center gap-4 rounded-lg border border-line bg-card px-4 py-3.5 shadow-xs transition-all duration-150 hover:border-faint hover:shadow-sm"
                   >
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-pine-soft text-pine-deep [&_svg]:h-5 [&_svg]:w-5">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-brand-soft text-brand-deep [&_svg]:h-5 [&_svg]:w-5">
                       {c.icon}
                     </span>
                     <span className="min-w-0">
                       <span className="block font-mono text-[11px] uppercase tracking-[0.14em] text-faint">{c.label}</span>
                       <span className="block truncate text-[15px] font-semibold text-ink">{c.value}</span>
                     </span>
-                    <svg viewBox="0 0 16 16" className="ml-auto h-4 w-4 shrink-0 text-faint transition-transform duration-150 group-hover:translate-x-1 group-hover:text-pine" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" className="ml-auto h-4 w-4 shrink-0 text-faint transition-transform duration-150 group-hover:translate-x-1 group-hover:text-brand" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M2 8 H14 M9 3 L14 8 L9 13" />
                     </svg>
                   </a>

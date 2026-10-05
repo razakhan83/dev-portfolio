@@ -25,7 +25,7 @@ function CodeIcon() {
 
 function CheckIcon() {
   return (
-    <svg viewBox="0 0 16 16" className="mt-[3px] h-4 w-4 shrink-0" fill="none" stroke="#1D4A38" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 16 16" className="mt-[3px] h-4 w-4 shrink-0" fill="none" stroke="#2B4BFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M3 8.5 L6.5 12 L13 4.5" />
     </svg>
   );
@@ -43,6 +43,7 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
       <div className={cn(flip && "lg:order-2")}>
         <ProjectShot
           image={project.image}
+          mobileImage={project.mobileImage}
           alt={`${project.name} homepage screenshot`}
           urlLabel={project.liveLabel}
           href={project.liveUrl}
@@ -61,9 +62,9 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
       <div className={cn(flip && "lg:order-1")}>
         <motion.div variants={staggerParent} initial="hidden" whileInView="show" viewport={revealViewport}>
           <motion.div variants={staggerChild} className="flex flex-wrap items-center gap-2.5">
-            <span className="font-mono text-[13px] font-bold text-amber-deep">{project.index}</span>
+            <span className="font-mono text-[13px] font-bold text-sky-deep">{project.index}</span>
             <span className="h-3 w-px bg-line" aria-hidden="true" />
-            <Badge variant={project.kind === "Client project" ? "pine" : "amber"}>{project.kind}</Badge>
+            <Badge variant={project.kind === "Client project" ? "brand" : "sky"}>{project.kind}</Badge>
             <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-faint">
               {project.year} : {project.role}
             </span>
@@ -104,7 +105,7 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
               href={project.demoPath ?? project.liveUrl}
               target={project.demoPath ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-pine px-5 py-2.5 text-sm font-semibold text-paper shadow-xs transition-all duration-150 hover:-translate-y-px hover:bg-pine-deep hover:shadow-sm"
+              className="inline-flex items-center gap-2 rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-paper shadow-xs transition-all duration-150 hover:-translate-y-px hover:bg-brand-deep hover:shadow-sm"
             >
               <ExternalIcon /> {project.demoPath ? "Open interactive demo" : "Live demo"}
             </a>
@@ -130,7 +131,7 @@ export function Projects() {
     <section id="work" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport} className="max-w-2xl">
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">01 : Selected work</p>
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-deep">01 : Selected work</p>
           <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
             Live projects, engineered end to end.
           </h2>

@@ -49,7 +49,7 @@ export function CodeSandbox() {
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">03 : Code preview</p>
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-deep">03 : Code preview</p>
             <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
               How I write production code.
             </h2>
@@ -65,7 +65,7 @@ export function CodeSandbox() {
                 "Small hooks with a single responsibility",
               ].map((t) => (
                 <li key={t} className="flex gap-3 text-[14.5px] leading-6 text-ink/90">
-                  <svg viewBox="0 0 16 16" className="mt-1 h-3.5 w-3.5 shrink-0" fill="none" stroke="#1D4A38" strokeWidth="2.4" strokeLinecap="round">
+                  <svg viewBox="0 0 16 16" className="mt-1 h-3.5 w-3.5 shrink-0" fill="none" stroke="#2B4BFF" strokeWidth="2.4" strokeLinecap="round">
                     <path d="M3 8.5 L6.5 12 L13 4.5" />
                   </svg>
                   <span>{t}</span>
@@ -92,7 +92,7 @@ export function CodeSandbox() {
                     className={cn(
                       "rounded-md px-3 py-2 font-mono text-xs transition-colors duration-150",
                       s.id === activeId
-                        ? "bg-pine-soft font-semibold text-pine-deep"
+                        ? "bg-brand-soft font-semibold text-brand-deep"
                         : "text-muted hover:bg-raised hover:text-ink"
                     )}
                   >
@@ -110,7 +110,7 @@ export function CodeSandbox() {
               </button>
             </div>
 
-            <div className="bg-[#1E1913]">
+            <div className="bg-[#101014]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}

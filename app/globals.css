@@ -11,27 +11,48 @@ html {
 }
 
 body {
-  background-color: #faf8f4;
-  color: #211b14;
+  background-color: #ffffff;
+  color: #09090b;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #1d4a38;
-  color: #faf8f4;
+  background: #2b4bff;
+  color: #ffffff;
 }
 
 /* Crisp structural divider used between major sections */
 .rule-dashed {
-  border-top: 1px dashed #d8d1bf;
+  border-top: 1px dashed #d4d4d8;
 }
 
 /* Focus visibility for a11y */
 :focus-visible {
-  outline: 2px solid #1d4a38;
+  outline: 2px solid #2b4bff;
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Animated underline for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: #2b4bff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.15s ease-out;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 /* Thin styled scrollbar for code panels */
@@ -40,7 +61,7 @@ body {
   width: 8px;
 }
 .code-scroll::-webkit-scrollbar-thumb {
-  background: #d8d1bf;
+  background: #3f3f46;
   border-radius: 8px;
 }
 .code-scroll::-webkit-scrollbar-track {

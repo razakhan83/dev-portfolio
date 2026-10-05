@@ -17,13 +17,13 @@ const TOKEN_RE = new RegExp(
 );
 
 const KIND_CLASS: Record<string, string> = {
-  comment: "text-[#8A7F6E] italic",
-  string: "text-[#E8A33D]",
-  number: "text-[#E8A33D]",
-  keyword: "text-[#7FB69E] font-medium",
-  tag: "text-[#A8CDBB] font-medium",
-  type: "text-[#D9C9A8]",
-  plain: "text-[#EDE6D6]",
+  comment: "text-[#71717A] italic",
+  string: "text-[#7DD3FC]",
+  number: "text-[#7DD3FC]",
+  keyword: "text-[#93B4FF] font-medium",
+  tag: "text-[#93B4FF] font-medium",
+  type: "text-[#E4E4E7]",
+  plain: "text-[#E4E4E7]",
 };
 
 function tokenizeLine(line: string): Token[] {
@@ -55,7 +55,7 @@ export function CodeBlock({ code }: { code: string }) {
       <code>
         {lines.map((line, i) => (
           <div key={i} className="flex">
-            <span className="w-10 shrink-0 select-none pr-4 text-right font-mono text-[11px] leading-6 text-[#6B5F4C]">
+            <span className="w-10 shrink-0 select-none pr-4 text-right font-mono text-[11px] leading-6 text-[#52525B]">
               {i + 1}
             </span>
             <span className="whitespace-pre font-mono">

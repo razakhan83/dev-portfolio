@@ -44,21 +44,21 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
     >
       <motion.rect
         x="8" y="8" width="464" height="284" rx="12"
-        stroke="#D8D1BF" strokeWidth="1.5" strokeDasharray="6 6"
+        stroke="#D4D4D8" strokeWidth="1.5" strokeDasharray="6 6"
         variants={draw(0)} initial="hidden" animate="show"
       />
 
       {/* wires */}
-      <motion.line x1="148" y1="138" x2="176" y2="138" stroke="#1D4A38" strokeWidth="2"
+      <motion.line x1="148" y1="138" x2="176" y2="138" stroke="#2B4BFF" strokeWidth="2"
         variants={draw(0.55)} initial="hidden" animate="show" />
-      <motion.line x1="304" y1="138" x2="332" y2="138" stroke="#1D4A38" strokeWidth="2"
+      <motion.line x1="304" y1="138" x2="332" y2="138" stroke="#2B4BFF" strokeWidth="2"
         variants={draw(0.85)} initial="hidden" animate="show" />
 
       {/* traveling packets */}
       {[
-        { from: 148, to: 176, delay: 1.5, color: "#B45309" },
-        { from: 304, to: 332, delay: 2.3, color: "#B45309" },
-        { from: 176, to: 148, delay: 3.1, color: "#1D4A38" },
+        { from: 148, to: 176, delay: 1.5, color: "#0284C7" },
+        { from: 304, to: 332, delay: 2.3, color: "#0284C7" },
+        { from: 176, to: 148, delay: 3.1, color: "#2B4BFF" },
       ].map((p, i) => (
         <motion.circle
           key={i}
@@ -74,21 +74,21 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
         <motion.g key={n.title} variants={rise(0.25 + i * 0.25)} initial="hidden" animate="show">
           <rect
             x={n.x} y="96" width="128" height="84" rx="10"
-            fill={n.accent ? "#1D4A38" : "#F5F2EB"}
-            stroke={n.accent ? "#1D4A38" : "#E3DDCF"}
+            fill={n.accent ? "#2B4BFF" : "#FFFFFF"}
+            stroke={n.accent ? "#2B4BFF" : "#E4E4E7"}
             strokeWidth="1.5"
           />
           <text
             x={n.x + 64} y="129" textAnchor="middle"
             fontFamily="ui-monospace, monospace" fontSize="13" fontWeight="700" letterSpacing="2"
-            fill={n.accent ? "#FAF8F4" : "#211B14"}
+            fill={n.accent ? "#FFFFFF" : "#09090B"}
           >
             {n.title}
           </text>
           <text
             x={n.x + 64} y="152" textAnchor="middle"
             fontFamily="ui-monospace, monospace" fontSize="10" letterSpacing="1"
-            fill={n.accent ? "#C4D2C6" : "#6E6557"}
+            fill={n.accent ? "#C7D2FE" : "#52525B"}
           >
             {n.sub}
           </text>
@@ -98,10 +98,10 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
       {/* caption chips */}
       {chips.map((c, i) => (
         <motion.g key={c} variants={rise(0.9 + i * 0.18)} initial="hidden" animate="show">
-          <rect x={nodes[i].x} y="202" width="128" height="32" rx="7" fill="#F2EFE8" stroke="#E3DDCF" strokeWidth="1" />
+          <rect x={nodes[i].x} y="202" width="128" height="32" rx="7" fill="#F7F7F9" stroke="#E4E4E7" strokeWidth="1" />
           <text
             x={nodes[i].x + 64} y="222" textAnchor="middle"
-            fontFamily="ui-monospace, monospace" fontSize="10" fill="#6E6557"
+            fontFamily="ui-monospace, monospace" fontSize="10" fill="#52525B"
           >
             {c}
           </text>
@@ -110,7 +110,7 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
 
       <motion.text
         x="240" y="270" textAnchor="middle"
-        fontFamily="ui-monospace, monospace" fontSize="11" letterSpacing="1.5" fill="#9A9081"
+        fontFamily="ui-monospace, monospace" fontSize="11" letterSpacing="1.5" fill="#A1A1AA"
         variants={rise(1.5)} initial="hidden" animate="show"
       >
         p95 RESPONSE: 180ms

@@ -11,7 +11,8 @@ const stack = ["Next.js", "React", "TypeScript", "Node.js", "Tailwind CSS", "Fra
 
 function ArrowIcon() {
   return (
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+      className="transition-transform duration-150 ease-out group-hover:translate-x-1">
       <path d="M2 8 H14 M9 3 L14 8 L9 13" />
     </svg>
   );
@@ -23,7 +24,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-14 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:pb-24">
         <motion.div variants={staggerParent} initial="hidden" animate="show">
           <motion.div variants={staggerChild} className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-md border border-pine-line bg-pine-soft px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-pine-deep shadow-xs">
+            <span className="inline-flex items-center gap-2 rounded-md border border-brand-line bg-brand-soft px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-deep shadow-xs">
               <StatusPulse />
               Available for freelance contracts
             </span>
@@ -46,7 +47,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={staggerChild} className="mt-9 flex flex-wrap gap-3">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="group">
               <a href="#work">
                 View selected work <ArrowIcon />
               </a>
@@ -79,7 +80,7 @@ export function Hero() {
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">
                 System overview
               </p>
-              <Badge variant="pine">Live diagram</Badge>
+              <Badge variant="brand">Live diagram</Badge>
             </div>
             <HeroBlueprint className="h-auto w-full" />
           </div>
@@ -90,7 +91,7 @@ export function Hero() {
               { k: "2", v: "Stores in production" },
             ].map((s) => (
               <div key={s.v} className="rounded-md border border-line bg-card px-4 py-3 shadow-xs">
-                <p className="text-xl font-extrabold tracking-tight text-pine">{s.k}</p>
+                <p className="text-xl font-extrabold tracking-tight text-brand">{s.k}</p>
                 <p className="mt-0.5 text-xs font-medium text-muted">{s.v}</p>
               </div>
             ))}

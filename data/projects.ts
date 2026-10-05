@@ -16,6 +16,7 @@ export type Project = {
   metrics: { label: string; value: string }[];
   motif: "gem" | "container" | "pulse";
   image?: string;
+  mobileImage?: string;
   demoPath?: string;
 };
 
@@ -49,6 +50,8 @@ export const projects: Project[] = [
     motif: "gem",
     image:
       "https://image.thum.io/get/width/1280/crop/800/noanimate/https://www.ornamentsbyarshad.com/",
+    mobileImage:
+      "https://image.thum.io/get/width/390/crop/844/viewportWidth/390/noanimate/https://www.ornamentsbyarshad.com/",
   },
   {
     slug: "china-unique-store",
@@ -79,6 +82,8 @@ export const projects: Project[] = [
     motif: "container",
     image:
       "https://image.thum.io/get/width/1280/crop/800/noanimate/https://www.chinauniquestore.com/",
+    mobileImage:
+      "https://image.thum.io/get/width/390/crop/844/viewportWidth/390/noanimate/https://www.chinauniquestore.com/",
   },
   {
     slug: "pulseboard",
@@ -108,5 +113,7 @@ export const projects: Project[] = [
     motif: "pulse",
     image:
       "https://image.thum.io/get/width/1280/crop/800/noanimate/https://dev-portfolio-lime-gamma.vercel.app/demo/pulseboard-static",
+    mobileImage:
+      "https://image.thum.io/get/width/390/crop/844/viewportWidth/390/noanimate/https://dev-portfolio-lime-gamma.vercel.app/demo/pulseboard-static",
   },
 ];

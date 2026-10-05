@@ -9,27 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm paper surfaces. No pure white anywhere.
-        paper: "#FAF8F4",
-        raised: "#F2EFE8",
-        card: "#F5F2EB",
-        line: "#E3DDCF",
-        dashed: "#D8D1BF",
-        ink: "#211B14",
-        muted: "#6E6557",
-        faint: "#9A9081",
-        // Brand: deep pine + burnt amber. Two colors only.
-        pine: {
-          DEFAULT: "#1D4A38",
-          deep: "#133325",
-          ink: "#0E2A1E",
-          soft: "#E4ECE5",
-          line: "#C4D2C6",
+        // Clean neutral surfaces. Strict 1-accent system.
+        paper: "#FFFFFF",
+        raised: "#F7F7F9",
+        card: "#FFFFFF",
+        line: "#E4E4E7",
+        dashed: "#D4D4D8",
+        ink: "#09090B",
+        muted: "#52525B",
+        faint: "#A1A1AA",
+        // Brand: cobalt blue. Secondary: sky. Nothing else.
+        brand: {
+          DEFAULT: "#2B4BFF",
+          deep: "#1E38D8",
+          ink: "#1729A8",
+          soft: "#EEF1FF",
+          line: "#C7D2FE",
         },
-        amber: {
-          DEFAULT: "#B45309",
-          deep: "#92400E",
-          soft: "#F7EAD3",
+        sky: {
+          DEFAULT: "#0284C7",
+          deep: "#0369A1",
+          soft: "#E0F2FE",
         },
       },
       fontFamily: {
@@ -42,18 +42,14 @@ const config: Config = {
       },
       boxShadow: {
         // Layered micro-shadows only. No heavy drop shadows.
-        xs: "0 1px 2px rgba(33, 27, 20, 0.05)",
-        sm: "0 1px 2px rgba(33, 27, 20, 0.06), 0 2px 8px rgba(33, 27, 20, 0.05)",
-        md: "0 2px 4px rgba(33, 27, 20, 0.06), 0 8px 24px rgba(33, 27, 20, 0.07)",
+        xs: "0 1px 2px rgba(9, 9, 11, 0.05)",
+        sm: "0 1px 2px rgba(9, 9, 11, 0.06), 0 2px 8px rgba(9, 9, 11, 0.05)",
+        md: "0 2px 4px rgba(9, 9, 11, 0.06), 0 12px 32px rgba(9, 9, 11, 0.08)",
       },
       keyframes: {
         "pulse-dot": {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.45", transform: "scale(0.82)" },
-        },
-        "draw-line": {
-          from: { strokeDashoffset: "1" },
-          to: { strokeDashoffset: "0" },
         },
         marquee: {
           from: { transform: "translateX(0)" },

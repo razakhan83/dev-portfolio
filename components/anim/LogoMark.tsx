@@ -17,17 +17,17 @@ export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
     <svg viewBox="0 0 40 40" fill="none" className={className} aria-hidden="true">
       <motion.rect
         x="3" y="3" width="34" height="34" rx="8"
-        stroke="#1D4A38" strokeWidth="2.5"
+        stroke="#2B4BFF" strokeWidth="2.5"
         variants={draw} initial="hidden" animate="show" custom={0}
       />
       <motion.path
         d="M15 14 L10 20 L15 26"
-        stroke="#1D4A38" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        stroke="#2B4BFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
         variants={draw} initial="hidden" animate="show" custom={1}
       />
       <motion.path
         d="M25 14 L30 20 L25 26"
-        stroke="#B45309" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        stroke="#0284C7" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
         variants={draw} initial="hidden" animate="show" custom={2}
       />
     </svg>

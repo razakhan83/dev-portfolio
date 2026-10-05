@@ -9,7 +9,7 @@ export function Services() {
     <section id="services" className="scroll-mt-20">
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">02 : Capabilities</p>
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-deep">02 : Capabilities</p>
           <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
             Concrete services, defined deliverables.
           </h2>
@@ -32,8 +32,8 @@ export function Services() {
               className="flex flex-col rounded-lg border border-line bg-card p-6 shadow-xs transition-shadow duration-150 hover:shadow-sm md:p-7"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-semibold tracking-[0.14em] text-amber-deep">{s.index}</span>
-                <span className="h-2 w-2 rounded-full bg-pine" aria-hidden="true" />
+                <span className="font-mono text-xs font-semibold tracking-[0.14em] text-sky-deep">{s.index}</span>
+                <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-xl font-bold tracking-tight">{s.title}</h3>
               <p className="mt-2.5 text-[14.5px] leading-7 text-muted">{s.description}</p>

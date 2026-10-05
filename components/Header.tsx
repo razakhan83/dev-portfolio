@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-sm">
       <motion.div
-        className="absolute inset-x-0 top-0 h-[2.5px] origin-left bg-pine"
+        className="absolute inset-x-0 top-0 h-[2.5px] origin-left bg-brand"
         style={{ scaleX: progress }}
         aria-hidden="true"
       />
@@ -41,7 +41,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-md px-3.5 py-2 text-sm font-medium text-muted transition-colors duration-150 hover:bg-raised hover:text-ink"
+              className="nav-link rounded-md px-3.5 py-2 text-sm font-medium text-muted transition-colors duration-150 hover:text-ink"
             >
               {l.label}
             </a>

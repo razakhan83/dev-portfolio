@@ -30,7 +30,7 @@ export default function PrivacyPage() {
         <p>
           Questions about this policy:{" "}
           <a
-            className="font-semibold text-pine underline underline-offset-4"
+            className="font-semibold text-brand underline underline-offset-4"
             href="mailto:123raza83@gmail.com"
           >
             123raza83@gmail.com

@@ -17,7 +17,7 @@ export function Footer() {
             </p>
             <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-line bg-card px-3 py-1.5">
               <StatusPulse />
-              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-pine-deep">
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-brand-deep">
                 All systems operational
               </span>
             </div>
