@@ -23,6 +23,8 @@ export function ProjectShot({
   conceptHref?: string;
 }) {
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const showFallback = !image || failed;
 
   return (
     <motion.a
@@ -52,10 +54,12 @@ export function ProjectShot({
 
       {/* viewport */}
       <div className="relative aspect-video overflow-hidden bg-raised">
-        {!loaded && image && (
+        {!loaded && !showFallback && (
           <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-raised via-card to-raised" aria-hidden="true" />
         )}
-        {image ? (
+        {showFallback ? (
+          <ConceptPreview />
+        ) : (
           <Image
             src={image}
             alt={alt}
@@ -66,9 +70,8 @@ export function ProjectShot({
               loaded ? "opacity-100" : "opacity-0"
             )}
             onLoad={() => setLoaded(true)}
+            onError={() => setFailed(true)}
           />
-        ) : (
-          <ConceptPreview />
         )}
 
         {/* hover overlay */}

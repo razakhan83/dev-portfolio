@@ -47,7 +47,8 @@ export const projects: Project[] = [
       { label: "Mobile traffic", value: "70%+" },
     ],
     motif: "gem",
-    image: "/projects/ornaments.jpg",
+    image:
+      "https://image.thum.io/get/width/1280/crop/800/noanimate/https://www.ornamentsbyarshad.com/",
   },
   {
     slug: "china-unique-store",
@@ -76,7 +77,8 @@ export const projects: Project[] = [
       { label: "Catalog", value: "Multi-category" },
     ],
     motif: "container",
-    image: "/projects/china.jpg",
+    image:
+      "https://image.thum.io/get/width/1280/crop/800/noanimate/https://www.chinauniquestore.com/",
   },
   {
     slug: "pulseboard",
@@ -104,5 +106,7 @@ export const projects: Project[] = [
       { label: "Tenants", value: "Isolated" },
     ],
     motif: "pulse",
+    image:
+      "https://image.thum.io/get/width/1280/crop/800/noanimate/https://dev-portfolio-lime-gamma.vercel.app/demo/pulseboard",
   },
 ];
