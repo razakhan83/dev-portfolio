@@ -1,9 +1,8 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
 type Range = "7D" | "30D" | "90D";
 
@@ -150,8 +149,15 @@ function Bars({ data, instant }: { data: number[]; instant: boolean }) {
 }
 
 function Dashboard() {
-  const searchParams = useSearchParams();
-  const instant = searchParams.get("static") === "1";
+  const [instant, setInstant] = useState(false);
+  useEffect(() => {
+    if (
+      window.location.hash === "#static" ||
+      new URLSearchParams(window.location.search).get("static") === "1"
+    ) {
+      setInstant(true);
+    }
+  }, []);
   const [range, setRange] = useState<Range>("30D");
   const n = range === "7D" ? 7 : range === "30D" ? 30 : 45;
   const revenue = useMemo(() => series(7, n, 42000, 38000), [n]);
@@ -243,9 +249,5 @@ function Dashboard() {
 }
 
 export default function PulseboardDemoPage() {
-  return (
-    <Suspense>
-      <Dashboard />
-    </Suspense>
-  );
+  return <Dashboard />;
 }
