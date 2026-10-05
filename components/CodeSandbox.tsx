@@ -46,14 +46,14 @@ export function CodeSandbox() {
 
   return (
     <section id="code" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">Code preview</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">03 : Code preview</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
               How I write production code.
             </h2>
-            <p className="mt-4 text-[16px] leading-7 text-muted">
+            <p className="mt-4 text-[16.5px] leading-[1.75] text-muted">
               Illustrative samples of the patterns used across client projects:
               validated API routes, server components, and typed state hooks.
               Switch tabs, read through, copy anything.

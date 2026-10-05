@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { LogoMark } from "./anim/LogoMark";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
@@ -15,9 +15,16 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, mass: 0.4 });
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-sm">
+      <motion.div
+        className="absolute inset-x-0 top-0 h-[2.5px] origin-left bg-pine"
+        style={{ scaleX: progress }}
+        aria-hidden="true"
+      />
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a href="#top" className="flex items-center gap-2.5" aria-label="Ahmed Raza home">
           <LogoMark />

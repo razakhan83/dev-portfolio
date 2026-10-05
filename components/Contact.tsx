@@ -70,14 +70,14 @@ export function Contact() {
 
   return (
     <section id="contact" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">Hire me</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">04 : Hire me</p>
+            <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
               Have a project? Let&apos;s scope it.
             </h2>
-            <p className="mt-4 max-w-md text-[16px] leading-7 text-muted">
+            <p className="mt-4 max-w-md text-[16.5px] leading-[1.75] text-muted">
               Send a short brief: what you need, your timeline, and your
               budget range. I reply within 24 hours with questions or a
               fixed quote.

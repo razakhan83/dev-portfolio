@@ -7,13 +7,13 @@ import { fadeUp, staggerParent, staggerChild, revealViewport } from "@/lib/motio
 export function Services() {
   return (
     <section id="services" className="scroll-mt-20">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={revealViewport}>
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">Capabilities</p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-extrabold tracking-tight md:text-4xl">
+          <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-deep">02 : Capabilities</p>
+          <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] tracking-tight md:text-[2.6rem]">
             Concrete services, defined deliverables.
           </h2>
-          <p className="mt-4 max-w-2xl text-[16px] leading-7 text-muted">
+          <p className="mt-4 max-w-2xl text-[16.5px] leading-[1.75] text-muted">
             Fixed scope, fixed communication. You always know what arrives and when.
           </p>
         </motion.div>

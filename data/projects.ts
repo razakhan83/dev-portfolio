@@ -15,6 +15,8 @@ export type Project = {
   stack: string[];
   metrics: { label: string; value: string }[];
   motif: "gem" | "container" | "pulse";
+  image?: string;
+  demoPath?: string;
 };
 
 export const projects: Project[] = [
@@ -45,6 +47,7 @@ export const projects: Project[] = [
       { label: "Mobile traffic", value: "70%+" },
     ],
     motif: "gem",
+    image: "/projects/ornaments.jpg",
   },
   {
     slug: "china-unique-store",
@@ -73,6 +76,7 @@ export const projects: Project[] = [
       { label: "Catalog", value: "Multi-category" },
     ],
     motif: "container",
+    image: "/projects/china.jpg",
   },
   {
     slug: "pulseboard",
@@ -80,8 +84,9 @@ export const projects: Project[] = [
     name: "Pulseboard",
     tagline: "Real-time SaaS analytics dashboard",
     kind: "Concept project",
-    liveUrl: "https://github.com/razakhan83",
-    liveLabel: "Concept preview on request",
+    liveUrl: "/demo/pulseboard",
+    liveLabel: "Interactive concept demo",
+    demoPath: "/demo/pulseboard",
     year: "2026",
     role: "Design and prototype",
     problem:

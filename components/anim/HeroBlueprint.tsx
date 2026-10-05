@@ -4,40 +4,35 @@ import { motion } from "framer-motion";
 
 /**
  * Animated system diagram: Client -> Next.js -> Database.
- * Lines draw themselves on scroll into view; data packets travel the wires.
+ * Mount-based animation (hero is above the fold): lines draw,
+ * nodes rise, data packets travel the wires on a loop.
  */
 export function HeroBlueprint({ className = "" }: { className?: string }) {
-  const line = {
+  const draw = (delay: number) => ({
     hidden: { pathLength: 0, opacity: 0 },
-    show: (d: number) => ({
+    show: {
       pathLength: 1,
       opacity: 1,
-      transition: { duration: 0.9, delay: d, ease: "easeOut" as const },
-    }),
-  };
-
-  const node = (d: number) => ({
-    hidden: { opacity: 0, y: 10 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, delay: d, ease: "easeOut" as const },
+      transition: { duration: 0.8, delay, ease: "easeOut" as const },
     },
   });
 
-  const packet = (fromX: number, toX: number, delay: number) => ({
-    animate: {
-      x: [fromX, toX],
-      opacity: [0, 1, 1, 0],
-      transition: { duration: 2.4, delay, repeat: Infinity, ease: "linear" as const },
+  const rise = (delay: number) => ({
+    hidden: { opacity: 0, y: 12 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, delay, ease: "easeOut" as const },
     },
   });
 
   const nodes = [
-    { x: 14, title: "CLIENT", sub: "React UI", accent: false },
-    { x: 182, title: "NEXT.JS", sub: "App Router", accent: true },
-    { x: 350, title: "DATABASE", sub: "PostgreSQL", accent: false },
+    { x: 20, title: "CLIENT", sub: "React UI", accent: false },
+    { x: 176, title: "NEXT.JS", sub: "App Router", accent: true },
+    { x: 332, title: "DATABASE", sub: "PostgreSQL", accent: false },
   ];
+
+  const chips = ["SSR pages", "Route handlers", "Row-level auth"];
 
   return (
     <svg
@@ -47,54 +42,52 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
       role="img"
       aria-label="Architecture diagram: client, Next.js server, and database connected by animated data flow"
     >
-      {/* frame */}
       <motion.rect
-        x="4" y="4" width="472" height="292" rx="12"
+        x="8" y="8" width="464" height="284" rx="12"
         stroke="#D8D1BF" strokeWidth="1.5" strokeDasharray="6 6"
-        variants={line} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0}
+        variants={draw(0)} initial="hidden" animate="show"
       />
 
       {/* wires */}
+      <motion.line x1="148" y1="138" x2="176" y2="138" stroke="#1D4A38" strokeWidth="2"
+        variants={draw(0.55)} initial="hidden" animate="show" />
+      <motion.line x1="304" y1="138" x2="332" y2="138" stroke="#1D4A38" strokeWidth="2"
+        variants={draw(0.85)} initial="hidden" animate="show" />
+
+      {/* traveling packets */}
       {[
-        { x1: 138, x2: 178 },
-        { x1: 306, x2: 346 },
-      ].map((w, i) => (
-        <motion.line
+        { from: 148, to: 176, delay: 1.5, color: "#B45309" },
+        { from: 304, to: 332, delay: 2.3, color: "#B45309" },
+        { from: 176, to: 148, delay: 3.1, color: "#1D4A38" },
+      ].map((p, i) => (
+        <motion.circle
           key={i}
-          x1={w.x1} y1="140" x2={w.x2} y2="140"
-          stroke="#1D4A38" strokeWidth="2"
-          variants={line} initial="hidden" whileInView="show" viewport={{ once: true }} custom={0.5 + i * 0.3}
+          cy="138" r="4.5" fill={p.color}
+          initial={{ x: p.from, opacity: 0 }}
+          animate={{ x: [p.from, p.to], opacity: [0, 1, 1, 0] }}
+          transition={{ duration: 2.2, delay: p.delay, repeat: Infinity, ease: "linear" }}
         />
       ))}
 
-      {/* traveling packets */}
-      <motion.circle cx="0" cy="140" r="4.5" fill="#B45309" initial={false} animate={packet(138, 178, 1.4).animate} />
-      <motion.circle cx="0" cy="140" r="4.5" fill="#B45309" initial={false} animate={packet(306, 346, 2.2).animate} />
-      <motion.circle cx="0" cy="140" r="4.5" fill="#1D4A38" initial={false} animate={packet(178, 138, 2.8).animate} />
-
       {/* nodes */}
       {nodes.map((n, i) => (
-        <motion.g
-          key={n.title}
-          variants={node(0.3 + i * 0.25)}
-          initial="hidden" whileInView="show" viewport={{ once: true }}
-        >
+        <motion.g key={n.title} variants={rise(0.25 + i * 0.25)} initial="hidden" animate="show">
           <rect
-            x={n.x} y="100" width="124" height="80" rx="10"
+            x={n.x} y="96" width="128" height="84" rx="10"
             fill={n.accent ? "#1D4A38" : "#F5F2EB"}
             stroke={n.accent ? "#1D4A38" : "#E3DDCF"}
             strokeWidth="1.5"
           />
           <text
-            x={n.x + 62} y="133" textAnchor="middle"
-            fontFamily="monospace" fontSize="13" fontWeight="700" letterSpacing="2"
+            x={n.x + 64} y="129" textAnchor="middle"
+            fontFamily="ui-monospace, monospace" fontSize="13" fontWeight="700" letterSpacing="2"
             fill={n.accent ? "#FAF8F4" : "#211B14"}
           >
             {n.title}
           </text>
           <text
-            x={n.x + 62} y="156" textAnchor="middle"
-            fontFamily="monospace" fontSize="10" letterSpacing="1"
+            x={n.x + 64} y="152" textAnchor="middle"
+            fontFamily="ui-monospace, monospace" fontSize="10" letterSpacing="1"
             fill={n.accent ? "#C4D2C6" : "#6E6557"}
           >
             {n.sub}
@@ -103,28 +96,22 @@ export function HeroBlueprint({ className = "" }: { className?: string }) {
       ))}
 
       {/* caption chips */}
-      {[
-        { x: 14, label: "SSR pages" },
-        { x: 182, label: "Route handlers" },
-        { x: 350, label: "Row-level auth" },
-      ].map((c, i) => (
-        <motion.g
-          key={c.label}
-          variants={node(0.9 + i * 0.2)}
-          initial="hidden" whileInView="show" viewport={{ once: true }}
-        >
-          <rect x={c.x} y="206" width="124" height="30" rx="7" fill="#F2EFE8" stroke="#E3DDCF" strokeWidth="1" />
-          <text x={c.x + 62} y="225" textAnchor="middle" fontFamily="monospace" fontSize="10" fill="#6E6557">
-            {c.label}
+      {chips.map((c, i) => (
+        <motion.g key={c} variants={rise(0.9 + i * 0.18)} initial="hidden" animate="show">
+          <rect x={nodes[i].x} y="202" width="128" height="32" rx="7" fill="#F2EFE8" stroke="#E3DDCF" strokeWidth="1" />
+          <text
+            x={nodes[i].x + 64} y="222" textAnchor="middle"
+            fontFamily="ui-monospace, monospace" fontSize="10" fill="#6E6557"
+          >
+            {c}
           </text>
         </motion.g>
       ))}
 
-      {/* latency readout */}
       <motion.text
-        x="240" y="272" textAnchor="middle"
-        fontFamily="monospace" fontSize="11" letterSpacing="1.5" fill="#9A9081"
-        variants={node(1.4)} initial="hidden" whileInView="show" viewport={{ once: true }}
+        x="240" y="270" textAnchor="middle"
+        fontFamily="ui-monospace, monospace" fontSize="11" letterSpacing="1.5" fill="#9A9081"
+        variants={rise(1.5)} initial="hidden" animate="show"
       >
         p95 RESPONSE: 180ms
       </motion.text>

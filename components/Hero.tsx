@@ -23,7 +23,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-14 md:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:pb-24">
         <motion.div variants={staggerParent} initial="hidden" animate="show">
           <motion.div variants={staggerChild} className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 rounded-md border border-pine-line bg-pine-soft px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-pine-deep">
+            <span className="inline-flex items-center gap-2 rounded-md border border-pine-line bg-pine-soft px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-pine-deep shadow-xs">
               <StatusPulse />
               Available for freelance contracts
             </span>
@@ -34,18 +34,18 @@ export function Hero() {
 
           <motion.h1
             variants={staggerChild}
-            className="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight md:text-5xl lg:text-[3.4rem]"
+            className="mt-7 text-[2.6rem] font-extrabold leading-[1.06] tracking-[-0.02em] md:text-6xl lg:text-[3.6rem]"
           >
             I build production web apps that earn their keep.
           </motion.h1>
 
-          <motion.p variants={staggerChild} className="mt-5 max-w-xl text-[17px] leading-8 text-muted">
+          <motion.p variants={staggerChild} className="mt-6 max-w-xl text-[17px] leading-[1.75] text-muted">
             Ahmed Raza, full-stack developer with 3 years shipping e-commerce
             stores, dashboards, and APIs. Next.js and TypeScript up front,
             solid data modeling behind. No page builders, no shortcuts.
           </motion.p>
 
-          <motion.div variants={staggerChild} className="mt-8 flex flex-wrap gap-3">
+          <motion.div variants={staggerChild} className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg">
               <a href="#work">
                 View selected work <ArrowIcon />
@@ -56,8 +56,8 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div variants={staggerChild} className="mt-10">
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-faint">
+          <motion.div variants={staggerChild} className="mt-11">
+            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-faint">
               Core stack
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
