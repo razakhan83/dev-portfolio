@@ -1,4 +1,4 @@
-import { Dashboard } from "../pulseboard/page";
+import { Dashboard } from "../pulseboard/dashboard";
 
 /**
  * Pixel-complete static variant of the Pulseboard demo.
