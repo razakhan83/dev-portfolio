@@ -148,16 +148,7 @@ function Bars({ data, instant }: { data: number[]; instant: boolean }) {
   );
 }
 
-function Dashboard() {
-  const [instant, setInstant] = useState(false);
-  useEffect(() => {
-    if (
-      window.location.hash === "#static" ||
-      new URLSearchParams(window.location.search).get("static") === "1"
-    ) {
-      setInstant(true);
-    }
-  }, []);
+export function Dashboard({ instant }: { instant: boolean }) {
   const [range, setRange] = useState<Range>("30D");
   const n = range === "7D" ? 7 : range === "30D" ? 30 : 45;
   const revenue = useMemo(() => series(7, n, 42000, 38000), [n]);
@@ -248,6 +239,19 @@ function Dashboard() {
   );
 }
 
+function AnimatedDashboard() {
+  const [instant, setInstant] = useState(false);
+  useEffect(() => {
+    if (
+      window.location.hash === "#static" ||
+      new URLSearchParams(window.location.search).get("static") === "1"
+    ) {
+      setInstant(true);
+    }
+  }, []);
+  return <Dashboard instant={instant} />;
+}
+
 export default function PulseboardDemoPage() {
-  return <Dashboard />;
+  return <AnimatedDashboard />;
 }
