@@ -107,6 +107,6 @@ export const projects: Project[] = [
     ],
     motif: "pulse",
     image:
-      "https://image.thum.io/get/width/1280/crop/800/noanimate/https://dev-portfolio-lime-gamma.vercel.app/demo/pulseboard",
+      "https://image.thum.io/get/width/1280/crop/800/noanimate/https://dev-portfolio-lime-gamma.vercel.app/demo/pulseboard%3Fstatic=1",
   },
 ];
